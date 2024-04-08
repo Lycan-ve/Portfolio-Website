@@ -12,7 +12,7 @@ const AboutPage = () => {
             <Image src={"/Biografia.png"} alt="" fill className="object-contain "/>
         </div>
     */}
-        <motion.div className="h-1/2 lg:h-[500px] lg:w-[50%] lg:mt-10 relative"
+        <motion.div className="h-[250px] w[250px] mb-10 lg:h-[500px] lg:w-[50%] lg:mt-10 relative"
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
@@ -24,7 +24,7 @@ const AboutPage = () => {
 
     
         {/* TEXT CONTAINER */}
-    <div className=" lg:h-full lg:w-1/2 flex flex-col lg:items-center lg:justify-center">
+    <div className="h-1/2 lg:h-full lg:w-1/2 flex flex-col lg:items-center lg:justify-center">
 
         {/* TITLE */}
         <h1 className="text-4xl sm:text-6xl lg:text-8xl text-white ">ACERCA DE MI.</h1>
