@@ -12,7 +12,7 @@ const AboutPage = () => {
             <Image src={"/Biografia.png"} alt="" fill className="object-contain "/>
         </div>
     */}
-        <motion.div className="h-[250px] w-[250px] lg:h-[500px] lg:w-[50%] mt-10 relative"
+        <motion.div className="h-1/2 lg:h-[500px] lg:w-[50%] lg:mt-10 relative"
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
