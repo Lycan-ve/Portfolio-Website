@@ -1,10 +1,10 @@
 import Image from "next/image"
 
 const Homepage = () => {
-  return <div className=" h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-15">
+  return <div className=" h-full bg-black flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-15">
 
     {/* IMAGE CONTAINER */}
-    <div className="h-1/2 relative lg:hidden">
+    <div className="h-1/2 relative lg:hidden ">
       <Image src={"/logo.png"} alt="" fill className="object-contain "/>
     </div>
 
