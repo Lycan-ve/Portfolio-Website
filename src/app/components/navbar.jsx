@@ -45,10 +45,10 @@ const Navbar = () => {
 
     const listVariants = {
         closed:{
-            x:"100vw"
+            x: "100vw"
         },
         opened:{
-            x:0,
+            x: 0,
         }
     }
 
@@ -62,9 +62,9 @@ const Navbar = () => {
 
             {/* NAVEGACION */}
 
-            <div className="text-white hidden md:flex gap-8 mr-60">{links.map(link=>(
-                <NavLink link={link} key={link.title}/>
-                ))}</div>
+            <div className="text-white hidden md:flex gap-8 mr-60">
+                {links.map(link=>(<NavLink link={link} key={link.title}/>))}
+            </div>
 
                 <div className="hidden md:flex gap-4">
                 <Link href="/">
@@ -82,7 +82,7 @@ const Navbar = () => {
             <div className="md:hidden">
 
                 {/* MENU BUTTON */}
-                <button className="w-10 h-8 flex flex-col justify-between z-50 relative" onClick={(()=>setOpen(prev=>!prev))}>
+                <button className="w-10 h-8 flex flex-col justify-between z-50 relative" onClick={(()=>setOpen(prev=>!prev))} >
                     <motion.div variants={topVariants} animate={open ? "opened" : "closed"} className="w-10 h-1 bg-white rounded origin-left"></motion.div>
                     <motion.div variants={centerVariants} animate={open ? "opened" : "closed"} className="w-10 h-1 bg-white rounded"></motion.div>
                     <motion.div variants={BottomVariants} animate={open ? "opened" : "closed"} className="w-10 h-1 bg-white rounded origin-left"></motion.div>
@@ -92,9 +92,11 @@ const Navbar = () => {
                 {open && (
                     <motion.div variants={listVariants} initial="closed" animate="opened" className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xl z-40">
                     {links.map(link=>(
-                        <Link href={link.url} key={link.title}>{link.title}</Link>
+                        <Link onClick={()=>setOpen(false)} href={link.url} key={link.title}>
+                            {link.title}
+                            </Link>
                         ))}
-                </motion.div>
+                    </motion.div>
                 )}
             </div>
         </div>

@@ -1,7 +1,9 @@
+"use client"
 import Image from "next/image"
+import { TypeAnimation } from 'react-type-animation';
 
 const Homepage = () => {
-  return <div className=" h-full bg-black flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-15">
+  return <div className=" h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-15">
 
     {/* IMAGE CONTAINER */}
     <div className="h-1/2 relative lg:hidden ">
@@ -9,13 +11,29 @@ const Homepage = () => {
     </div>
 
     {/* TEXT CONTAINER */}
-    <div className="h-1/2 lg:h-full lg:w-1/2 flex flex-col items-center justify-center lg:items-start">
+    <div className="h-1/2 lg:h-full lg:w-1/2 flex flex-col text-center items-center justify-center lg:text-start lg:items-start">
 
       {/* PRESENTATION */}
       <h1 className="text-base sm:text-2xl lg:text-3xl text-white">HOLA, SOY FREDERICK</h1>
 
       {/* TITLE */}
-      <h1 className="text-4xl sm:text-6xl lg:text-8xl text-white font-extrabold">MULTITAREAS</h1>
+      <h1 className="text-4xl sm:text-6xl lg:text-8xl text-white font-extrabold">
+        <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+        'Desarrollador Web',
+        1000, // wait 1s before replacing "Mice" with "Hamsters"
+        'Diseñador Grafico',
+        1000,
+        'Analista',
+        1000,
+        'Transcriptor',
+        1000
+      ]}
+      wrapper="span"
+      speed={50}
+      repeat={Infinity}
+    /></h1>
 
       {/* BUTTONS */}
       <div className="flex gap-4 mt-10">
@@ -25,7 +43,7 @@ const Homepage = () => {
     </div>
 
         {/* IMAGE CONTAINER */}
-    <div className="sm:h-min lg:h-full lg:w-1/2 relative">
+    <div className="sm:h-min lg:h-[600px] lg:w-1/2 relative">
       <Image src={"/logo.png"} alt="" fill className="object-contain"/>
     </div>
   </div>
