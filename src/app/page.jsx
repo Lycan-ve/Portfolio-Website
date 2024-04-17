@@ -23,7 +23,7 @@ const Homepage = () => {
         // Same substring at the start will only be typed out once, initially
         'Desarrollador Web',
         1000, // wait 1s before replacing "Mice" with "Hamsters"
-        'Diseñador Grafico',
+        'Diseñador Gráfico',
         1000,
         'Analista',
         1000,
@@ -37,8 +37,13 @@ const Homepage = () => {
 
       {/* BUTTONS */}
       <div className="flex gap-4 mt-10">
-        <button className="p-4 rounded-lg ring-1 text-white ring-white">Descargar mi CV</button>
-        <button className="p-4 rounded-lg ring-1 text-black ring-white bg-white">Ver Mis Trabajos</button>
+        <button className="p-4 rounded-lg ring-1 text-black ring-white bg-white inline-flex items-center hover:bg-gray-300">
+          <Image src={"/CV.png"} width="30" height="30" className="mr-2"/>
+          <span>Descargar mi CV</span>
+        </button>
+        <button className="p-4 rounded-lg ring-1 text-black ring-white bg-white hover:bg-transparent hover:text-white">
+          <a href="Trabajos">Ver Mis Trabajo</a>
+          </button>
       </div>
     </div>
 
