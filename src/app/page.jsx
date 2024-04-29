@@ -1,6 +1,8 @@
 "use client"
+import React from "react";
 import Image from "next/image"
 import { TypeAnimation } from 'react-type-animation';
+import Link from "next/link";
 
 const Homepage = () => {
   return <div className=" h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-15">
@@ -39,7 +41,7 @@ const Homepage = () => {
       <div className="flex gap-4 mt-10">
         <button className="p-4 rounded-lg ring-1 text-black ring-white bg-white inline-flex items-center hover:bg-gray-300">
           <Image src={"/CV.png"} width="30" height="30" className="mr-2"/>
-          <span>Descargar mi CV</span>
+            <Link href={""}>Descargar mi CV</Link>
         </button>
         <button className="p-4 rounded-lg ring-1 text-black ring-white bg-white hover:bg-transparent hover:text-white">
           <a href="Trabajos">Ver Mis Trabajo</a>
