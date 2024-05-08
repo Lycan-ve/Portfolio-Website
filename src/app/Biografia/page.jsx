@@ -6,8 +6,8 @@ import Image from "next/image"
 const AboutPage = () => {
 
     return ( 
-    
-    <div className="flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-15">
+
+<div className="flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-15 bg-black">
         
         <motion.div className=" h-[250px] w[250px] mb-10 lg:h-[500px] lg:w-[50%] lg:mt-10 relative"
         initial={{ opacity: 0, scale: 0.5 }}
@@ -36,27 +36,27 @@ const AboutPage = () => {
         <p className="text-lg sm:text-base lg:text-xl text-white font-extralight mt-3 lg:text-justify">Soy TSU (Técnico Superior Universitario) en Informática, lo que me ha brindado una base sólida de conocimientos técnicos y habilidades que complementan mi perfil como profesional del mundo digital.</p>
 
         <p className="text-lg sm:text-base lg:text-xl text-white font-extralight mt-3 lg:text-justify">En mi portafolio podrás encontrar una muestra de mis proyectos y trabajos realizados, que reflejan mi pasión por la creatividad y la excelencia en cada detalle. Estoy comprometido en seguir creciendo y aprendiendo en esta área, buscando siempre superar mis propias expectativas y las de mis clientes. ¡Estoy emocionado por mostrarte mi trabajo!</p>
-        </div>
+    </div>
 
          {/* HABILIDADES CONTAINER */}
-    <div className="flex flex-col gap-12 ">
+    <div className="flex flex-col gap-12">
         {/* HABILIDADES TITLE */}
         <h1 className="text-4xl sm:text-6xl lg:text-7xl text-white">HABILIDADES.</h1>
         {/* HABILIDADES LIST*/}
-        <div className="flex gap-4 flex-wrap">
-            <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white font-bold">Javascript</div>
-            <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white font-bold">Typescript</div>
-            <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white font-bold">React.js</div>
-            <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white font-bold">Next.js</div>
-            <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white font-bold">Tailwind CSS</div>
-            <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white font-bold">Golang</div>
-            <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white font-bold">PHP</div>
-            <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white font-bold">Laravel</div>
-            <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white font-bold">Mongodb</div>
-            <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white font-bold">MySql</div>
+        <div className="flex gap-4 flex-wrap text-black">
+            <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white font">Javascript</div>
+            <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white">Typescript</div>
+            <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white">React.js</div>
+            <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white">Next.js</div>
+            <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white">Tailwind CSS</div>
+            <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white">Golang</div>
+            <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white">PHP</div>
+            <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white">Laravel</div>
+            <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white">Mongodb</div>
+            <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white">MySql</div>
         </div>
     </div>
-    </div>
+</div>
 </div>
     
 )
