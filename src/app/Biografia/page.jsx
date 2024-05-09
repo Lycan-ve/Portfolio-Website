@@ -29,7 +29,7 @@ const AboutPage = () => {
             <h1 className="text-4xl sm:text-6xl lg:text-7xl text-white">ACERCA DE MI.</h1>
 
         {/* DESC */}
-        <p className="text-lg sm:text-base lg:text-xl text-white font-extralight mt-3 lg:text-justify">¡Hola! Mi nombre es Frederick Beaumont, tengo 19 años y soy un apasionado del desarrollo web y diseño gráfico. Con un año de experiencia en el campo, me he destacado por mi creatividad y habilidad para plasmar ideas en proyectos visuales atractivos y funcionales.</p>
+        <p className="text-lg sm:text-base lg:text-xl text-white font-extralight mt-3 lg:text-justify">¡Hola! Mi nombre es Frederick Beaumont, y soy un apasionado del desarrollo web y diseño gráfico. Con un año de experiencia en el campo, me he destacado por mi creatividad y habilidad para plasmar ideas en proyectos visuales atractivos y funcionales.</p>
 
         <p className="text-lg sm:text-base lg:text-xl text-white font-extralight mt-3 lg:text-justify">Además, me desempeño como Transcriptor y Analista en documentación, donde mi precisión y atención al detalle han sido clave para garantizar la calidad de los trabajos que realizo.</p>
 
@@ -44,7 +44,7 @@ const AboutPage = () => {
         <h1 className="text-4xl sm:text-6xl lg:text-7xl text-white">HABILIDADES.</h1>
         {/* HABILIDADES LIST*/}
         <div className="flex gap-4 flex-wrap text-black">
-            <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white font">Javascript</div>
+            <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white">Javascript</div>
             <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white">Typescript</div>
             <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white">React.js</div>
             <div className="rounded p-2 text-sm cursor-pointer border border-white bg-white hover:bg-transparent hover:text-white">Next.js</div>
