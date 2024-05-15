@@ -67,13 +67,13 @@ const Navbar = () => {
             </div>
 
                 <div className="hidden md:flex gap-4">
-                <Link href="/">
+                <Link href="https://github.com/Lycan-ve">
                 <Image src={"/github.png"} alt="" width={24} height={24}/>
                 </Link>
                 <Link href="/">
                 <Image src={"/discordia.png"} alt="" width={24} height={24}/>
                 </Link>
-                <Link href="/">
+                <Link href="https://twitter.com/Lycan_ve">
                 <Image src={"/gorjeo.png"} alt="" width={24} height={24} className="bg-white border rounded-md"/>
                 </Link>
                 </div>
