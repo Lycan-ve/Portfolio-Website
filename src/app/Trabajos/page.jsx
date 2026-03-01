@@ -12,7 +12,7 @@ const WorkPage = () => {
         title: 'Card 1',
         subtitle: 'Information 1',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        figmaurl: 'https://www.figma.com/design/CvXCeCHXTo8ZNPukKb30Xt/Sastem--Carga-Familiar-?m=auto&t=iSn2BLHoFoJDBDck-1'
+        figmaUrl: 'https://www.figma.com/design/CvXCeCHXTo8ZNPukKb30Xt/Sastem--Carga-Familiar-?m=auto&t=iSn2BLHoFoJDBDck-1'
       },
       {
         id: '2',
