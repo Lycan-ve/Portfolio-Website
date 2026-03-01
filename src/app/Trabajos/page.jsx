@@ -12,6 +12,7 @@ const WorkPage = () => {
         title: 'Card 1',
         subtitle: 'Information 1',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        figmaurl: 'https://www.figma.com/design/CvXCeCHXTo8ZNPukKb30Xt/Sastem--Carga-Familiar-?m=auto&t=iSn2BLHoFoJDBDck-1'
       },
       {
         id: '2',
@@ -61,46 +62,36 @@ const WorkPage = () => {
   
         <AnimatePresence>
           {selectedId && (
-            <motion.div
-              className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              {items.map((item) => (
-                item.id === selectedId && (
-                  <motion.div
-                    className="bg-white rounded-lg p-4 shadow-md max-w-lg mx-auto"
-                    layoutId={`card-container-${item.id}`}
-                    key={item.id}
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    exit={{ scale: 0.8, opacity: 0 }}
-                  >
-                    <motion.div className="relative">
-                      <motion.button
-                        className="absolute top-2 right-2 py-1 px-2 text-center text-white bg-black rounded-md"
-                        onClick={() => setSelectedId('')}
-                      >
-                        Cerrar
-                      </motion.button>
-                      <motion.h2 className="text-xl font-bold mb-2 text-black">{item.title}</motion.h2>
-                      <motion.h5 className="text-sm font-bold mb-1 text-black">{item.subtitle}</motion.h5>
-                      <motion.p className="text-md text-black mb-4">{item.description}</motion.p>
-                      <motion.p
-                        className="text-md text-black"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                      >
-                        Additional content can go here!
-                      </motion.p>
-                    </motion.div>
-                  </motion.div>
-                )
-              ))}
-            </motion.div>
-          )}
+  <motion.div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+    {items.map((item) => (
+      item.id === selectedId && (
+        <motion.div
+          key={item.id}
+          layoutId={`card-container-${item.id}`}
+          className="bg-white rounded-lg p-6 w-full max-w-4xl h-[80vh] overflow-hidden flex flex-col"
+        >
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-2xl font-bold">{item.title}</h2>
+            <button onClick={() => setSelectedId('')} className="bg-black text-white px-4 py-2 rounded">
+              Cerrar
+            </button>
+          </div>
+
+          {/* El contenedor del prototipo */}
+          <div className="flex-1 w-full bg-gray-100 rounded-md overflow-hidden">
+            <iframe
+              className="w-full h-full border-none"
+              src={item.figmaUrl}
+              allowFullScreen
+            />
+          </div>
+
+          <p className="mt-4 text-gray-600">{item.description}</p>
+        </motion.div>
+      )
+    ))}
+  </motion.div>
+)}
         </AnimatePresence>
       </motion.div>
     );
