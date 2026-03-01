@@ -71,7 +71,7 @@ const WorkPage = () => {
           className="bg-white rounded-lg p-6 w-full max-w-4xl h-[80vh] overflow-hidden flex flex-col"
         >
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-2xl font-bold">{item.title}</h2>
+            <h2 className="text-2xl font-bold text-black">{item.title}</h2>
             <button onClick={() => setSelectedId('')} className="bg-black text-white px-4 py-2 rounded">
               Cerrar
             </button>
