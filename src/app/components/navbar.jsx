@@ -70,7 +70,7 @@ const Navbar = () => {
                 <Link href="https://github.com/Lycan-ve">
                 <Image src={"/github.png"} alt="" width={24} height={24}/>
                 </Link>
-                <Link href="/">
+                <Link href=" https://discordapp.com/users/1067139507922681978">
                 <Image src={"/discordia.png"} alt="" width={24} height={24}/>
                 </Link>
                 <Link href="https://twitter.com/Lycan_ve">
