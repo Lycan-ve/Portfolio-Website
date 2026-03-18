@@ -26,12 +26,10 @@ const Homepage = () => {
         // Same substring at the start will only be typed out once, initially
         'Desarrollador Web',
         1000, // wait 1s before replacing "Mice" with "Hamsters"
-        'Diseñador Gráfico',
+        'Fullstack',
         1000,
-        'Analista',
+        'Diseñador UX/UI',
         1000,
-        'Transcriptor',
-        1000
       ]}
       wrapper="span"
       speed={50}
