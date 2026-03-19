@@ -98,12 +98,17 @@ export const CodeCanvas = ({ item, isPreview = true }) => {
         )}
 
 
-        {/* Status Bar Inferior */}
-        <div className="px-4 py-1 bg-[#161b22] border-t border-white/5 flex justify-between items-center text-[10px] text-gray-500">
-          <div className="flex gap-4">
-            <span>UTF-8</span>
-            <span>Go 1.21</span>
+        {/* Status Bar Inferior Actualizada */}
+        <div className="px-4 py-1.5 bg-[#161b22] border-t border-white/5 flex justify-between items-center font-jetbrains text-[10px]">
+          <div className="flex gap-4 items-center">
+            <div className="flex items-center gap-1.5">
+              <div className={`w-1.5 h-1.5 rounded-full ${loading ? 'bg-yellow-500 animate-pulse' : 'bg-green-500'}`} />
+              <span className="text-gray-400">{loading ? 'Syncing...' : 'Connected'}</span>
+            </div>
+            <span className="text-gray-600">UTF-8</span>
+            <span className="text-gray-600">Go 1.21</span>
           </div>
+          
           <div className="text-blue-500/60 font-bold uppercase tracking-tighter">
             {item.title}
           </div>
