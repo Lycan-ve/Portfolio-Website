@@ -118,26 +118,24 @@ export const CodeCanvas = ({ item, isPreview = true }) => {
   }
 
   // --- VISTA DECORATIVA (CARD GRID) ---
-  return (
-    <div className="w-full h-full bg-[#0a0a0a] p-8 font-jetbrains text-[10px] overflow-hidden opacity-30 group-hover:opacity-100 transition-all duration-700 relative">
-      <div className="flex gap-2 mb-6">
-        <div className="w-2.5 h-2.5 rounded-full bg-[#e06c75]/20 border border-[#e06c75]/40" />
-        <div className="w-2.5 h-2.5 rounded-full bg-[#d19a66]/20 border border-[#d19a66]/40" />
-        <div className="w-2.5 h-2.5 rounded-full bg-[#98c379]/20 border border-[#98c379]/40" />
-      </div>
-      
-      <p className="text-[#c678dd] mb-1">package <span className="text-[#abb2bf]">main</span></p>
-      <p className="text-[#c678dd] mb-4">import <span className="text-[#98c379]">"github.com/gofiber/fiber/v2"</span></p>
+return (
+  <div className="w-full h-full bg-[#0a0a0a] p-8 font-jetbrains text-[10px] overflow-hidden opacity-30 group-hover:opacity-100 transition-all duration-700 relative">
+    {/* ... círculos de colores ... */}
+    
+    <p className="text-[#c678dd] mb-1">package <span className="text-[#abb2bf]">main</span></p>
+    {/* CORRECCIÓN: Usamos llaves para las comillas */}
+    <p className="text-[#c678dd] mb-4">import <span className="text-[#98c379]">{"\"github.com/gofiber/fiber/v2\""}</span></p>
 
-      <p className="text-[#61afef]">func <span className="text-[#e5c07b]">Main</span>() {'{'}</p>
-      <div className="pl-4 space-y-1 my-2">
-        <p className="text-[#5c6370] italic">// {item.stack}</p>
-        <p className="text-[#abb2bf]">project <span className="text-[#c678dd]">:=</span> "{item.title}"</p>
-        <p className="text-[#abb2bf]">status <span className="text-[#c678dd]">:=</span> <span className="text-[#d19a66]">200</span></p>
-      </div>
-      <p className="text-[#61afef]">{'}'}</p>
-      
-      <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent pointer-events-none" />
+    <p className="text-[#61afef]">func <span className="text-[#e5c07b]">Main</span>() {'{'}</p>
+    <div className="pl-4 space-y-1 my-2">
+      {/* CORRECCIÓN: Comentarios dentro de llaves */}
+      <p className="text-[#5c6370] italic">{"// " + (item.stack || "Stack")}</p>
+      <p className="text-[#abb2bf]">project <span className="text-[#c678dd]">:=</span> {"\"" + item.title + "\""}</p>
+      <p className="text-[#abb2bf]">status <span className="text-[#c678dd]">:=</span> <span className="text-[#d19a66]">200</span></p>
     </div>
-  );
+    <p className="text-[#61afef]">{'}'}</p>
+    
+    <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent pointer-events-none" />
+  </div>
+);
 };
