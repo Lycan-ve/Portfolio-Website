@@ -40,64 +40,63 @@ export const CodeCanvas = ({ item, isPreview = true }) => {
           </div>
 
           {/* Editor de Código */}
-<div className="flex-1 relative bg-[#0d0f14] overflow-hidden group/code">
-  <pre className="pl-6 pt-4 leading-6 font-jetbrains text-[13px] whitespace-pre pb-24 overflow-x-auto custom-scrollbar">
-    <code className="block">
-      {code ? (
-        code.split("\n").map((line, i) => {
-          // 1. Escapar caracteres HTML básicos para evitar conflictos
-          let html = line
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;");
+          <div className="flex-1 relative bg-[#0d0f14] overflow-hidden group/code">
+            <pre className="pl-6 pt-4 leading-6 font-jetbrains text-[13px] whitespace-pre pb-24 overflow-x-auto custom-scrollbar">
+              <code className="block">
+                {code ? (
+                  code.split("\n").map((line, i) => {
+                    // 1. Escapar caracteres HTML básicos para evitar conflictos
+                    let html = line
+                      .replace(/&/g, "&amp;")
+                      .replace(/</g, "&lt;")
+                      .replace(/>/g, "&gt;");
 
-          // 2. Procesar Comentarios PRIMERO (para que no atrapen otros spans)
-          // Usamos un marcador temporal para proteger los comentarios
-          const comments = [];
-          html = html.replace(/(\/\/.*$)/g, (match) => {
-            comments.push(`<span style="color: #5c6370; font-style: italic;">${match}</span>`);
-            return `__COMMENT_${comments.length - 1}__`;
-          });
+                    // 2. Procesar Comentarios PRIMERO (para que no atrapen otros spans)
+                    // Usamos un marcador temporal para proteger los comentarios
+                    const comments = [];
+                    html = html.replace(/(\/\/.*$)/g, (match) => {
+                      comments.push(`<span style="color: #5c6370; font-style: italic;">${match}</span>`);
+                      return `__COMMENT_${comments.length - 1}__`;
+                    });
 
-          // 3. Procesar Strings (Verde)
-          html = html.replace(/(["'`].*?["'`])/g, '<span style="color: #98c379;">$1</span>');
+                    // 3. Procesar Strings (Verde)
+                    html = html.replace(/(["'`].*?["'`])/g, '<span style="color: #98c379;">$1</span>');
 
-          // 4. Keywords de Go (Púrpura)
-          html = html.replace(/\b(package|import|func|return|type|struct|interface|if|else|range|go|chan|const|var|select|switch|case|default|for|break|continue)\b/g, '<span style="color: #c678dd;">$1</span>');
+                    // 4. Keywords de Go (Púrpura)
+                    html = html.replace(/\b(package|import|func|return|type|struct|interface|if|else|range|go|chan|const|var|select|switch|case|default|for|break|continue)\b/g, '<span style="color: #c678dd;">$1</span>');
 
-          // 5. Tipos y Built-ins (Dorado)
-          html = html.replace(/\b(string|int|int64|uint64|float64|bool|error|any|map|make|new|byte|rune|panic|defer)\b/g, '<span style="color: #e5c07b;">$1</span>');
+                    // 5. Tipos y Built-ins (Dorado)
+                    html = html.replace(/\b(string|int|int64|uint64|float64|bool|error|any|map|make|new|byte|rune|panic|defer)\b/g, '<span style="color: #e5c07b;">$1</span>');
 
-          // 6. Funciones (Azul)
-          html = html.replace(/\b([a-zA-Z_]\w*)(?=\()/g, '<span style="color: #61afef;">$1</span>');
+                    // 6. Funciones (Azul)
+                    html = html.replace(/\b([a-zA-Z_]\w*)(?=\()/g, '<span style="color: #61afef;">$1</span>');
 
-          // 7. Números y Booleans (Naranja)
-          html = html.replace(/\b(\d+|nil|true|false|iota|err)\b/g, '<span style="color: #d19a66;">$1</span>');
+                    // 7. Números y Booleans (Naranja)
+                    html = html.replace(/\b(\d+|nil|true|false|iota|err)\b/g, '<span style="color: #d19a66;">$1</span>');
 
-          // 8. Restaurar los comentarios protegidos
-          comments.forEach((comment, index) => {
-            html = html.replace(`__COMMENT_${index}__`, comment);
-          });
+                    // 8. Restaurar los comentarios protegidos
+                    comments.forEach((comment, index) => {
+                      html = html.replace(`__COMMENT_${index}__`, comment);
+                    });
 
-          return (
-            <div 
-              key={i} 
-              className="hover:bg-white/5 transition-colors w-full min-h-[1.5rem]"
-              dangerouslySetInnerHTML={{ __html: html || " " }} 
-            />
-          );
-        })
-      ) : (
-        <span className="text-[#5c6370] italic font-jetbrains">
-          {loading ? "// Sincronizando código fuente..." : "// No hay vista previa disponible"}
-        </span>
-      )}
-    </code>
-  </pre>
-  
-  <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#0d0f14] via-[#0d0f14]/80 to-transparent pointer-events-none" />
-</div>
-
+                    return (
+                      <div 
+                        key={i} 
+                        className="hover:bg-white/5 transition-colors w-full min-h-[1.5rem]"
+                        dangerouslySetInnerHTML={{ __html: html || " " }} 
+                      />
+                    );
+                  })
+                ) : (
+                  <span className="text-[#5c6370] italic font-jetbrains">
+                    {loading ? "// Sincronizando código fuente..." : "// No hay vista previa disponible"}
+                  </span>
+                )}
+              </code>
+            </pre>
+            
+            <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#0d0f14] via-[#0d0f14]/80 to-transparent pointer-events-none" />
+          </div>
         </div>
 
 
